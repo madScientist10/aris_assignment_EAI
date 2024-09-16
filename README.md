@@ -16,7 +16,7 @@ The results of the debate model (the questions, the discussion between the two m
 The visualization of the training process during fine-tuning is available at the following wandb link:
 [FineTune Training](https://wandb.ai/neural_scientist-aristotle-univesity-of-thessaloniki/assignment-edgerunner-aris/reports/ORPO-Fine-Tuning--Vmlldzo5MzgxMzQ0?accessToken=sahs42db45kz4ei4nwe1tyoyw1amiqkob2e6t4ao7xx3j6rol0is9i7zv4ifb2th)
  
-QLoRA & LoRA adapters of the fine-tuned models are included in this [Drive Folder](https://drive.google.com/drive/folders/1dTOJQDexD2eyL6HCGFuzw28xAlRn1e_B?usp=sharing), and the models are available at HF hub: https://huggingface.co/huggingscientist10 
+QLoRA/LoRA adapters of the fine-tuned models are included in this [Drive Folder](https://drive.google.com/drive/folders/1dTOJQDexD2eyL6HCGFuzw28xAlRn1e_B?usp=sharing), and the models are available at HF hub: https://huggingface.co/huggingscientist10 
 
 requirements.txt includes the basic libraries used.
 
@@ -28,7 +28,7 @@ Notes:
 
 - ORPO was chosen for fine-tuning due to memory constraints when attempting to use DPO since it requires a reference model.
 - The fine-tuning was performed using the orpo-dpo-mix-40k dataset, which is a mix of various DPO preference datasets, including related to mathematics.
-- Fine-tuning (QLoRA / LoRA) was performed on a very small subset of this dataset, and only for 1 epoch, again due to resource limitations.
+- Fine-tuning was performed on a very small subset of this dataset, and only for 1 epoch, again due to resource limitations.
   
 
 ### Model Debate Evaluation
