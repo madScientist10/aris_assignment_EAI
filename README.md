@@ -24,13 +24,13 @@ Notes:
 ### Fine-tuning
 
 - ORPO was chosen for fine-tuning due to memory constraints when attempting to use DPO since it requires a reference model.
-- I Used the orpo-dpo-mix-40k dataset, focusing on mathematics-related content.
-- Fine-tuning was performed on a subset of the data for 1 epoch, again due to resource limitations.
+- The fine-tuning was performed using the orpo-dpo-mix-40k dataset, which is a mix of various DPO preference datasets, including related to mathematics.
+- Fine-tuning was performed on a small subset of this dataset, and only for 1 epoch, again due to resource limitations.
 
 ### Model Debate Evaluation
 
 - I designed a debate-style process where models discuss the given maths problems.
-- Models review and improve upon each other's responses until converging on a solution.
+- Both models are given the problem and take turns to solve it, each time reviewing the previous model's response and improving it, until they converge to a common solution within a specified number of steps.
 - Since this approach required manual design, using lm-eval-harness was not applicable, so accuracy was measured manually, by processing the final response string to extract the resulting scalar value and comparing it with the ground truth result.
 
 ## To Run
