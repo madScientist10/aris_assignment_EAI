@@ -12,7 +12,8 @@ I used a compute instance with 2xV100 GPUs in AzureML Studio while preparing thi
 The results of the debate model (the questions, the discussion between the two models and the results) are available in file result.txt. Any new run will append new data to this file.
 
 The visualization of the training process during fine-tuning is available at the following wandb link:
-https://api.wandb.ai/links/neural_scientist-aristotle-univesity-of-thessaloniki/upnc51sx 
+https://wandb.ai/neural_scientist-aristotle-univesity-of-thessaloniki/assignment-edgerunner-aris/reports/ORPO-Fine-Tuning--Vmlldzo5MzgxMzQ0?accessToken=sahs42db45kz4ei4nwe1tyoyw1amiqkob2e6t4ao7xx3j6rol0is9i7zv4ifb2th
+ 
 Fine-tuned adapters are included in this repo, and the models are available at HF hub: https://huggingface.co/huggingscientist10 
 
 requirements.txt includes the basic libraries used.
