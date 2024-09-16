@@ -13,9 +13,9 @@ The results of the debate model (the questions, the discussion between the two m
 
 The visualization of the training process during fine-tuning is available at the following wandb link:
 
-https://wandb.ai/neural_scientist-aristotle-univesity-of-thessaloniki/assignment-edgerunner-aris/reports/ORPO-Fine-Tuning--Vmlldzo5MzgxMzQ0?accessToken=sahs42db45kz4ei4nwe1tyoyw1amiqkob2e6t4ao7xx3j6rol0is9i7zv4ifb2th
+[FineTuning Training](https://wandb.ai/neural_scientist-aristotle-univesity-of-thessaloniki/assignment-edgerunner-aris/reports/ORPO-Fine-Tuning--Vmlldzo5MzgxMzQ0?accessToken=sahs42db45kz4ei4nwe1tyoyw1amiqkob2e6t4ao7xx3j6rol0is9i7zv4ifb2th)
  
-Fine-tuned adapters are included in this repo, and the models are available at HF hub: https://huggingface.co/huggingscientist10 
+Fine-tuned adapters are included in this [Drive Folder](https://drive.google.com/drive/folders/1dTOJQDexD2eyL6HCGFuzw28xAlRn1e_B?usp=sharing), and the models are available at HF hub: https://huggingface.co/huggingscientist10 
 
 requirements.txt includes the basic libraries used.
 
