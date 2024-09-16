@@ -30,7 +30,7 @@ Notes:
 
 ### Model Debate Evaluation
 
-- I designed a debate-style process where models discuss the given maths problems.
+- I designed a debate-style process where two models discuss the given maths problems.
 - Both models are given the problem and take turns to solve it, each time reviewing the previous model's response and improving it, until they converge to a common solution within a specified number of steps.
 - Since this approach required manual design, using lm-eval-harness was not applicable, so accuracy was measured manually, by processing the final response string to extract the resulting scalar value and comparing it with the ground truth result.
 
@@ -38,7 +38,8 @@ Notes:
 
 - Due to memory limitations, Llama was loaded and used as a quantized model with 4-bit precision at all steps of the process, in order to fit in the available memory.
 - However, it was not possible to do the same with EdgeRunner, since after experimenting to load the model in 4bits I realized that it would cause its generated responses to be completely incoherent (mostly sequences of symbols). Fortunately, the model could fit in the compute instance (requiring freeing up all the memory frequently) for the fine-tuning and debate process. However, for the initial evaluation using lm-eval-harness, the 4bit precision model version was used since the full model could not fit, and I believe that its reported accuracy in that test might be inaccurate.
-- Improved performance from fine-tuning is not apparent when looking at the training metrics, which is natural since training was very short, so the chosen answers and rejected answers fluctuate in a similar fashion, so the margins remain relatively constant so far. One could argue that performance degrades, since rejected answers become chosen slightly more than before. For this reason, I decided to use the original models (not the finetuned) for the debate process. The idea of first optimizing the pretrained models on maths datasets, and then applying the debate scheme on those would be more promising given enough resources.
+- The debate model will use the original models instead of the fine-tuned ones due to their better performance.
+Improved performance from fine-tuning is not apparent when looking at the training metrics, which is natural since training was very short, so the chosen answers and rejected answers fluctuate in a similar fashion, so the margins remain relatively constant so far. One could argue that performance degrades, since rejected answers become chosen slightly more than before. For this reason, I decided to use the original models (not the finetuned) for the debate process. The idea of first optimizing the pretrained models on maths datasets, and then applying the debate scheme on those would be more promising given enough resources.
 - For the debate process, the idea is to, instead of optimizing the models separately in order to improve their individual performance at GSM8K, combine the models in a collaborative manner in order to solve the questions more accurately by having the models discuss and review their answers and eventually improve them and converge to an accurate solution within a specified number of rounds.
 - The discussion prompt includes special tokens (e.g. <|end_header_id|>). This is the only way that I could stop Llama from generating infinite text (until max_new_tokens threshold was hit). I tried to troubleshoot in several other ways but adding the special tokens was the only way that I could do it successfully. Researching the issue showed that this is not uncommon, but the provided solutions did not work for me (modifying pad token, config, updating libraries, ...). In some of the cases during the debate, Llama would still not stop generating text.
 - There is a manual evaluation performed, since the current setup was more difficult to implement to make use of lm-eval-harness. The evaluation method extracts the final answer that the models converged to (as a scalar value), and compares it to the ground-truth value. If they are exactly the same, then the model it counts as a correct solution, otherwise it counts as wrong.
@@ -61,7 +62,7 @@ Other things I attempted to do was implement a simple MCTS-based method, or a tr
 -----
 In case you wish to run the notebook:
 - To run from scratch, simply run debate_model.ipynb. It will run the initial evaluations, fine-tuning, and proceed to solve the GSM8K with the proposed debate/collaboration methodology. An HF token to upload those models to HF is required.
-- The debate model will use the original models instead of the fine-tuned ones due to better performance, since fine-tuning was very short and performance did not improve, as mentioned in notes below.
+- , since fine-tuning was very short and performance did not improve, as mentioned in notes below.
 - To run the debate model, simply load the libraries at the beginning of the notebook, and then run the last two cells.
 
 
