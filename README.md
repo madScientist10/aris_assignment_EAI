@@ -34,13 +34,6 @@ Notes:
 - Both models are given the problem and take turns to solve it, each time reviewing the previous model's response and improving it, until they converge to a common solution within a specified number of steps.
 - Since this approach required manual design, using lm-eval-harness was not applicable, so accuracy was measured manually, by processing the final response string to extract the resulting scalar value and comparing it with the ground truth result.
 
-## To Run
-
-- To run from scratch, simply run debate_model.ipynb. It will run the initial evaluations, fine-tuning, and proceed to solve the GSM8K with the proposed debate/collaboration methodology. An HF token to upload those models to HF is required.
-- The debate model will use the original models instead of the fine-tuned ones due to better performance, since fine-tuning was very short and performance did not improve, as mentioned in notes below.
-- To run the debate model, simply load the libraries at the beginning of the notebook, and then run the last two cells.
-
-
 ## Implementation Notes
 
 - Due to memory limitations, Llama was loaded and used as a quantized model with 4-bit precision at all steps of the process, in order to fit in the available memory.
@@ -64,3 +57,12 @@ Notes:
 - A few-shot learning methodology could improve performance in the debate process (e.g. allowing the model to remember previous questions, discussions and results).
 
 Other things I attempted to do was implement a simple MCTS-based method, or a traditional Reinforcement Learning technique, but it required far too much effort for the purposes and scope of this assignment.
+
+-----
+In case you wish to run the notebook:
+- To run from scratch, simply run debate_model.ipynb. It will run the initial evaluations, fine-tuning, and proceed to solve the GSM8K with the proposed debate/collaboration methodology. An HF token to upload those models to HF is required.
+- The debate model will use the original models instead of the fine-tuned ones due to better performance, since fine-tuning was very short and performance did not improve, as mentioned in notes below.
+- To run the debate model, simply load the libraries at the beginning of the notebook, and then run the last two cells.
+
+
+
