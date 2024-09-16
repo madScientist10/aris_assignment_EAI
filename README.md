@@ -5,7 +5,7 @@
 The proposed approach involves of the following processes:
 1. Evaluating the pretrained models on GSM8K using lm-eval-harness
 2. Fine-tuning the models using ORPO
-3. Implementing a debate-style evaluation where the two models models collaboratively solve GSM8K problems.
+3. Implementing a debate-style evaluation where the two given models (Llama-3.1-8B-Instruct and EdgeRunner-Tactival-7B) work collaboratively solve GSM8K problems.
 
 I used a compute instance with 2xV100 GPUs in AzureML Studio while preparing this assignment. For the last (longer) run that I submitted, I used a compute instance with 4xV100 GPUs.
 
