@@ -1,0 +1,12 @@
+torch
+transformers
+peft
+trl
+datasets
+numpy
+pandas
+matplotlib
+seaborn
+jupyter
+huggingface_hub
+wandb
