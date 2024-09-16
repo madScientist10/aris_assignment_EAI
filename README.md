@@ -9,7 +9,8 @@ The proposed approach involves of the following processes:
 
 I used a compute instance with 2xV100 GPUs in AzureML Studio while preparing this assignment. For the last (longer) run that I submitted, I used a compute instance with 4xV100 GPUs.
 
-The main procedure and results are in the notebook **debate_model.ipynb**
+The main procedure and results are in the notebook **debate_model.ipynb**.
+
 The results of the debate model (the questions, the discussion between the two models and the results) are available in file **result.txt**. Any new run will append new data to this file.
 
 The visualization of the training process during fine-tuning is available at the following wandb link:
